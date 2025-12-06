@@ -1,0 +1,13 @@
+version: 1.0
+runtime: python3
+build:
+  commands:
+    pre-build:
+      - echo "Installing dependencies..."
+    build:
+      - pip install -r requirements.txt
+run:
+  runtime-version: 3.11.4
+  command: streamlit run app.py --server.port=80 --server.address=0.0.0.0
+  network:
+    port: 80
